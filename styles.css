@@ -1,0 +1,196 @@
+ /* ===== Réinitialisation de base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== Body et fond ===== */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('tan.jpg'); /* Image de fond du site */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #000;
+}
+  
+/* ===== Header ===== */
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+header h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 10px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e01b46;
+}
+
+/* ===== Sections ===== */
+section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+section h2 {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+section p {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* ===== Galerie d'images style Pinterest ===== */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+/* Bouton de téléchargement, invisible par défaut */
+.image-container a {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: none;
+    background-color: rgba(16, 218, 245, 0.8);
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.image-container a:hover {
+    background-color: rgb(252, 18, 49);
+}
+
+/* Afficher le bouton uniquement au hover de l'image */
+.image-container:hover a {
+    display: block;
+}
+
+/* ===== Grille responsive style Pinterest ===== */
+#galerie {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    padding: 30px;
+}
+
+/* ===== Section Vidéos horizontales ===== */
+#videos {
+    display: flex;
+    flex-direction: column-reverse; /* disposition horizontale */
+    gap: 20px; /* espace entre les vidéos */
+    justify-content: center; /* centrer horizontalement */
+    align-items: flex-start;
+    margin: 20px 0;
+    flex-wrap: wrap; /* permet de passer à la ligne si écran trop petit */
+}
+
+.video-container {
+    display: flex;
+    flex-direction: row; /* vidéo au-dessus, bouton en dessous */
+    align-items: center;
+}
+
+video {
+    width: 350px; /* largeur réduite pour tenir côte à côte */
+    height: 200px; /* hauteur proportionnelle */
+    border: solid #eedada;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.download-btn {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #10bfeb;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #f01111;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 800px) {
+    #videos {
+        flex-direction: row; /* passer en vertical sur mobile */
+        gap: 30px;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* ===== Hero Section ===== */
+.hero {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 800px) {
+    nav ul {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    #galerie {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
